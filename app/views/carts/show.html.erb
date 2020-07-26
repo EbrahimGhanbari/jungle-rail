@@ -1,6 +1,9 @@
 <section class="cart-show">
 
   <header class="page-header">
+  <% if enhanced_cart.empty? %>
+    <%= render 'alert'%>
+  <% end %>
     <h1>My Cart</h1>
   </header>
 
