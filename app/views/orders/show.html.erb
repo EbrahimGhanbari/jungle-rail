@@ -2,12 +2,40 @@
 
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
+    
   </header>
-
+  <h4>Thank you for your order!</h4>
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+
+    <section class="products-show">
+
+      <article class="product-detail">
+        <div class="row">
+          <div class="col-sm-4">
+            <%= image_tag @order_detail.image.url, class: 'main-img' %>
+          </div>
+          <div class="col-sm-8">
+            <dl class="dl-horizontal">
+              <dt>User Email:</dt>
+              <dd><%= @order.email %></dd>
+              <dt>Name</dt>
+              <dd><%= @order_detail.name %></dd>
+              <dt>Description</dt>
+              <dd><%= @order_detail.description %></dd>
+              <dt>Quantity</dt>
+              <dd><%= @item[0].quantity %></dd>
+              <dt>Total Price</dt>
+              <dd><%= humanized_money_with_symbol @order_detail.price * @item[0].quantity %></dd>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+    </section>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
+
+
