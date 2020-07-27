@@ -1,2 +1,25 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+<div class="background">
+  <div class="container">
+    <div class="panel admin-table">
+      
+      <div class="admin-plan">
+        <img src="https://image.flaticon.com/icons/svg/202/202373.svg" alt="" class="admin-img">
+        <h2 class="admin-header">Products Quantity</h2>
+        <ul class="admin-features">
+          <li class="admin-features-item"><%= @quantity %></li>
+      </div>
+      
+      <div class="admin-plan">
+        <img src="https://image.flaticon.com/icons/svg/2020/2020399.svg" alt="" class="admin-img">
+        <h2 class="admin-header">Categories</h2>
+        <ul class="admin-features">
+          <% @categories.each do |category| %>
+            <li class="admin-features-item"> <%= category.name%> </li>
+          <% end %>
+        </ul>
+ 
+      
+    </div>
+  </div>
+</div>
