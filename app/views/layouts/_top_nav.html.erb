@@ -28,6 +28,25 @@
         <li>
           <a  href="/about">About Us</a>
         </li>
+        
+        
+          <% if current_user %>
+          <li>
+            <a><%= current_user.name %> </a>  
+          </li>
+          <li>
+          <a  href="/logout">Log out</a>
+          </li>
+          
+          <% else %>
+          <li>
+          <a  href="/login">Login</a>
+          </li>
+          <li>
+          <a  href="/signup">Sign Up</a>
+          </li>
+          <% end %>
+      
       </ul>
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
